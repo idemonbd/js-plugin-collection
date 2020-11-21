@@ -1,0 +1,700 @@
+<html lang="en" data-lt-installed="true">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tire Size Calculator</title>
+    <meta name="description"
+        content="The best tire size calculator. Use our tire size calculator to find tire size specs and suggested tire sizes. Then check prices for all available tire sizes.">
+    <link rel="canonical" href="https://tiresize.com/calculator/">
+    <meta name="viewport" content="width=1150">
+    <link href="https://tiresize.com/css/style2.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta property="og:image" content="https://tiresize.com/images/fbshare.jpg">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script async="" src="www.google-analytics.com/analytics.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-35107301-2', 'auto', { 'cookieExpires': 31536000 });
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        var g = function (id) { return document.getElementById(id) };
+        function setCookie(c_name, value, exdays) { var exdate = new Date(); exdate.setDate(exdate.getDate() + exdays); var c_value = escape(value) + ((exdays == null) ? "" : ";expires=" + exdate.toUTCString()); document.cookie = c_name + "=" + c_value + ";path=/"; }
+        function getCookie(c_name) { var i, x, y, ARRcookies = document.cookie.split(";"); for (i = 0; i < ARRcookies.length; i++) { x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("=")); y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1); x = x.replace(/^\s+|\s+$/g, ""); if (x == c_name) { return unescape(y); } } }
+        var http1 = false; var http1 = new XMLHttpRequest();
+        if (window.matchMedia("(min-width: 768px)").matches) { viewport = document.querySelector("meta[name=viewport]"); viewport.setAttribute('content', 'width=1150'); }
+    </script>
+
+    <script>
+        function toptab1() {
+            g('calctop2').style.display = "none";
+            g('calctop').style.display = "block";
+            g('tab3').style.cssText = "background-color:#c0c0c0;border-bottom:1px solid #888;z-index:0;height:27px;top:0px";
+            g('tab1').style.cssText = "background-color:#e5e5e5;border-bottom:1px solid #e5e5e5;z-index:1;height:30px;top:-3px";
+            g('CompVisualizer').style.display = "none";
+            g('CalcVisualizer').style.display = "block";
+            g('tab1').innerHTML = "<h2>Tire Calculator</h2>";
+            g('Equivalent').innerHTML = '<a class="goplus" onclick="toptab2()">Convert to Different Wheel Size?</a><input type="hidden" name="nrim" value="">';
+            g('calcspecs').style.display = 'block';
+            g('CalcEquivs').style.display = 'none';
+            setCookie("Calculator", "Calc", 90);
+            if (window.innerWidth > 767 || document.documentElement.clientWidth > 767) { g('resultstab').style.display = "block"; }
+            if (window.innerWidth < 768 || document.documentElement.clientWidth < 768) {
+                g('MenuWrapper2').style.display = "block";
+                if (g('sugdisplay').innerHTML != '') { g('sugdisplay').style.display = 'block'; }
+            }
+            g('selectMenu').style.cssText = "border-left:1px solid #fff";
+            g('choosetire').style.cssText = "border-right:1px solid #aaa;background-color:#d7d7d7";
+            g('choosesize').style.cssText = "border-left:1px solid #fff;background-color:transparent";
+        }
+
+        function toptab3() {
+            g('calctop2').style.display = "block";
+            g('calctop').style.display = "none";
+            g('tab3').style.cssText = "background-color:#e5e5e5;border-bottom:1px solid #e5e5e5;z-index:1;height:30px;top:-3px";
+            g('tab1').style.cssText = "background-color:#c0c0c0;border-bottom:1px solid #888;z-index:0;height:27px;top:0px";
+            g('CalcVisualizer').style.display = "none";
+            g('CompVisualizer').style.display = "block";
+            g('resultstab').style.display = "none";
+            g('MenuWrapper2').style.display = "none";
+            setCookie("Calculator", "Comp", 90);
+            if (window.innerWidth < 768 || document.documentElement.clientWidth < 768) { g('sugdisplay').style.display = "none" }
+        }
+
+        function toptab2() {
+            g('Equivalent').innerHTML = '<a>New Wheel Size</a><input type="number" name="nrim" value="">';
+            g('calcspecs').style.display = 'none';
+            g('CalcEquivs').style.display = 'block';
+            g('tab1').innerHTML = '<h2>Back to Calculator</h2>';
+            adClickers();
+        }
+    </script>
+    <style>
+        #calcspecs input[type=text] {
+
+            border: 1px solid #ccc;
+        }
+
+        .getcalcs {
+            background: #4CAF50 !important;
+        }
+        #tab3, #tab1 {
+            background: #f9f9f9 !important;
+        }
+
+        .tire {
+
+            background-color: #ffffff;
+
+        }
+
+        .tire3 {
+
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+
+        }
+
+        .goplus {
+            color: black !important;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        body {
+            background: none;
+        }
+
+        #calctop2 {
+            background: f5f5f5 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Wrap">
+
+
+        <div id="Wrapper">
+            <div id="CalcTitle">
+
+            </div>
+
+
+            <div id="CompTiresWrap">
+                <div id="CompTires"></div>
+            </div>
+
+            <div id="calctab" style="transition: all 0.5s ease 0s; margin: auto; float: none;">
+                <a onclick="toptab3();ga('send', 'event', 'ComparisonTab', 'TireCalc');" id="tab3"
+                    style="background-color: rgb(192, 192, 192); border-bottom: 1px solid rgb(136, 136, 136); z-index: 0; height: 27px; top: 0px;">
+                    <h2>Tire Comparison</h2>
+                </a>
+                <a onclick="toptab1();calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,'','TireSizeCalc')"
+                    id="tab1"
+                    style="background-color: rgb(229, 229, 229); border-bottom: 1px solid rgb(229, 229, 229); z-index: 1; height: 30px; top: -3px;">
+                    <h2>Tire Calculator</h2>
+                </a>
+
+                <!--Compare Tab-->
+                <div id="calctop2" style="display: none;">
+                    <form name="tirecompare">
+                        <div>
+                            <div><a>Size 1</a><input type="number" name="sw"
+                                    onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><b>/</b><input
+                                    type="number" name="as"
+                                    onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><b>R</b><input
+                                    type="number" name="rim"
+                                    onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}">
+                            </div>
+                        </div>
+                        <div>
+                            <div><a>Size 2</a><input type="number" name="swb"
+                                    onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><b>/</b><input
+                                    type="number" name="asb"
+                                    onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><b>R</b><input
+                                    type="number" name="rimb"
+                                    onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}">
+                            </div>
+                        </div>
+
+                        <div class="getcalcs"
+                            onclick="calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,'','TireSizeCalc')">
+                            Compare</div>
+
+                        <div id="comparecalc">
+                            <div class="specCat"></div>
+                            <div class="nocolor">Size 1</div>
+                            <div class="nocolor"> Size 2</div><br>
+                            <div class="specCat">Diameter</div><input type="text" class="tire1" name="diameter"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="tire2" name="diameterb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="diff" name="pdiameterb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat">Width</div><input type="text" class="tire1" name="width"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="tire2" name="widthb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="diff" name="pwidthb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat">Sidewall</div><input type="text" class="tire1" name="sidewall"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="tire2" name="sidewallb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="diff" name="psidewallb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat">Circum.</div><input type="text" class="tire1" name="circumference"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="tire2" name="circumferenceb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="diff" name="pcircumferenceb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat" id="rev2">Revs/km</div><input type="text" class="tire1" name="revs"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="tire2" name="revsb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><input
+                                type="text" class="diff" name="prevsb"
+                                onkeydown="if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                        </div>
+                    </form>
+                </div>
+                <!--close Compare Tab-->
+
+                <!--Calc Tab-->
+                <div id="calctop" style="display: block; background: f5f5f5;">
+                    <form name="tirecalc">
+                        <div><a>Size</a><input type="number" name="sw"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><b>/</b><input
+                                type="number" name="as"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><b>R</b><input
+                                type="number" name="rim"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}">
+                        </div>
+                        <br>
+                        <div id="Equivalent"><a class="goplus" onclick="toptab2()">Convert to Different Wheel
+                                Size?</a><input type="hidden" name="nrim" value=""></div>
+
+                        <div class="getcalcs"
+                            onclick="calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,'','TireSizeCalc')"
+                            style="
+    background: #4CAF50;
+">
+                            Calculate</div>
+
+                        <div id="calcspecs" style="display: block;">
+                            <div class="specCat2">Diameter</div><input type="text" class="tire" name="diameter"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat2">Width</div><input type="text" class="tire" name="width"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat2">Sidewall</div><input type="text" class="tire" name="sidewall"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat2">Circum.</div><input type="text" class="tire" name="circumference"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <div class="specCat2" id="rev1">Revs/km</div><input type="text" class="tire" name="revs"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"><br>
+                            <input type="hidden" name="diameter2"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"
+                                value="381">
+                            <input type="hidden" name="width2"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"
+                                value="27">
+                            <input type="hidden" name="rim2"
+                                onkeydown="if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,&quot;&quot;,&quot;TireSizeCalc&quot;)}"
+                                value="5">
+                        </div>
+
+                        <div id="CalcEquivs" style="display: none;">
+                            <div>
+                                <h2>Tire Size Equivalents</h2>
+                            </div><br>
+                            <div class="specCat2">Equal Inches Size</div>
+                            <div class="tire3" id="eqin">13X15R5</div>
+                            <div class="sep"></div>
+                            <div class="specCat2">Equal Metric Size</div>
+                            <div class="tire3" id="eqmet">381/27R5</div>
+                        </div>
+                    </form>
+                </div>
+                <!--close Calc Tab -->
+                <div id="mconvert" onclick="mConvert('mm','flip','')">
+                    <div id="slid" style="left: 0px; width: 52px;"></div>
+                    <span id="mm">mm</span>
+                    <span id="in">inches</span>
+                </div>
+                <div id="calcinfo" style="
+    display: none;
+"><a onclick="getInfo('open')">*About Results</a></div>
+                <div id="trypresscalc2"><a onclick="ga('send','event','pressCalcLink','Calc Mobile')"
+                        href="/pressure-calculator/">What Tire Pressure to Run?</a></div>
+            </div>
+            <!--close calctab-->
+
+            <div id="CalcWrap" style="transition: all 0.5s ease 0s;margin-top: 172px;display: none;">
+                <div id="CalcVisualizer" style="display: block;">
+                    <div id="ShowTires" onclick="showVisual();ga('send', 'event', 'Visualizer', 'tabclicked')">Tire
+                        Size Visualizer <span id="spin"></span></div>
+                    <div id="CalcViewer" style="display: block;">
+                        <div id="calccomp2">
+                            <div class="tirewrap">
+                                <div id="tc">
+                                    <div style="position:absolute;top:45%;left:5%;font-size:8px;text-align:center">Image
+                                        Not<br>Available</div>
+                                </div>
+                                <div id="ttwidth" style="display: none;">
+                                    <div id="viswidth">15"</div>
+                                </div>
+                                <div id="ttheight" style="display: none;">
+                                    <div id="visheight">13"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="calccomp1">
+                            <div class="tirewrap">
+                                <div id="c">
+                                    <div style="position:absolute;top:45%;left:35%;font-size:8px;text-align:center">
+                                        Image Not<br>Available<div id="visarrow"></div>
+                                    </div>
+                                </div>
+                                <div id="twheel" style="display: none;">
+                                    <div id="viswheel">5"</div>
+                                </div>
+                                <div id="tside" style="display: none;">
+                                    <div id="visside">4"</div>
+                                </div>
+                                <div id="visrevs" style="display: none;">1552 Revs/Mile</div>
+                            </div>
+
+                        </div>
+                    </div><!-- close Calcviewer -->
+                    <div id="gotosize"></div>
+                    <br><br>
+                    <div id="trypresscalc"><a onclick="ga('send','event','pressCalcLink','Calc')"
+                            href="/pressure-calculator/">What Tire Pressure to Run?</a></div>
+                </div><!-- close CalcVisualizer -->
+
+                <div id="CompVisualizer" style="display: none;">
+                    <div id="ShowCompTires" onclick="showCompVisual()">Tire Size Comparison Visualizer <span
+                            id="spin2"></span></div>
+                    <div id="Viewer">
+                        <div id="comp2">
+                            <div class="tirewrap" id="ttire1">
+                                <div id="tc1">
+                                    <div style="position:absolute;top:45%;left:5%;font-size:8px;text-align:center">Image
+                                        Not<br>Available</div>
+                                </div>
+                                <div id="ttwidth1" style="display: none;">
+                                    <div id="viswidth1">5"</div>
+                                </div>
+                                <div id="ttheight1" style="display: none;">
+                                    <div id="visheight1">1"</div>
+                                </div>
+                            </div>
+                            <div class="tirewrap" id="ttire2">
+                                <div id="tc2">
+                                    <div style="position:absolute;top:45%;left:5%;font-size:8px;text-align:center">Image
+                                        Not<br>Available</div>
+                                </div>
+                                <div id="ttwidth2" style="display: none;">
+                                    <div id="viswidth2">6"</div>
+                                </div>
+                                <div id="ttheight2" style="display: none;">
+                                    <div id="visheight2">4"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="comp1">
+                            <div class="tirewrap" id="tire1">
+                                <div id="c1">
+                                    <div style="position:absolute;top:45%;left:35%;font-size:8px;text-align:center">
+                                        Image Not<br>Available<div id="visarrow1">3.1"</div>
+                                    </div>
+                                </div>
+                                <div id="twheel1" style="display: none;">
+                                    <div id="viswheel1">5"</div>
+                                </div>
+                                <div id="tside1" style="display: none;">
+                                    <div id="visside1">-2"</div>
+                                </div>
+                                <div id="visrevs1" style="display: none;">20178 Revs/Mile</div>
+                            </div>
+
+                            <div class="tirewrap" id="tire2">
+                                <div id="c2">
+                                    <div style="position:absolute;top:45%;left:35%;font-size:8px;text-align:center">
+                                        Image Not<br>Available<div id="visarrow2">12.6"</div>
+                                    </div>
+                                </div>
+                                <div id="twheel2" style="display: none;">
+                                    <div id="viswheel2">7"</div>
+                                </div>
+                                <div id="tside2" style="display: none;">
+                                    <div id="visside2">-1.5"</div>
+                                </div>
+                                <div id="visrevs2" style="display: none;">5045 Revs/Mile</div>
+                            </div>
+                        </div>
+                        <div id="trywheelcalc"><a onclick="ga('send','event','offsetCalcLink','Calc')"
+                                href="/wheel-offset-calculator/">Looking to Compare Wheel Offset?</a><a
+                                onclick="ga('send','event','pressCalcLink','CalcComp')"
+                                href="/pressure-calculator/">What Tire Pressure to Run?</a></div>
+                    </div><!-- close viewer -->
+
+                    <div id="comparespeed">
+                        <div class="bigtext">Speedometer Error<br><span>(Set Size1 to OEM Size)</span></div><br>
+                        <form name="speed">
+                            <div id="reading"><b>Speed</b><a>10 km/h</a><a>30 km/h</a><a>50 km/h</a><a>70 km/h</a><a>90
+                                    km/h</a><a>110 km/h</a><a>130 km/h</a><a>150 km/h</a></div>
+                            <div id="actual"><b>Actual</b><input type="text" name="spd20"><input type="text"
+                                    name="spd30"><input type="text" name="spd40"><input type="text" name="spd50"><input
+                                    type="text" name="spd60"><input type="text" name="spd70"><input type="text"
+                                    name="spd80"><input type="text" name="spd90">
+                            </div>
+                        </form>
+                    </div>
+
+                </div><!-- close CompVisualizer -->
+                <div id="MenuWrapper2" style="display: none;">
+                    <div id="selectMenu" style="border-left: 1px solid rgb(255, 255, 255);">
+                        <div id="choosetire" onclick="choosetire()"
+                            style="border-right: 1px solid rgb(170, 170, 170); background-color: rgb(215, 215, 215);">
+                            12-15R5 Tires</div>
+                        <div id="choosesize" onclick="choosesize()"
+                            style="border-left: 1px solid rgb(255, 255, 255); background-color: transparent;">
+                            Alternate Sizes</div>
+                    </div>
+                </div>
+
+                <div id="resultstab" style="display: block;">
+                    <div id="ShowAlternate">Alternate Tire Sizes</div>
+                    <div id="SizeTabWrap" style="display: block;"><a id="num5" class="numselected"
+                            onclick="getSizes('12-5-12','12','5');ga('send','event','CalcRimTabs','12-15R5','5')">5"
+                            Wheel</a><a id="num4" class="numunselected"
+                            onclick="getSizes('12-4-12','12','4');ga('send','event','CalcRimTabs','12-15R5','4')">4"</a><a
+                            id="num6" class="numunselected"
+                            onclick="getSizes('12-6-12','12','6');ga('send','event','CalcRimTabs','12-15R5','6')">6"</a><a
+                            id="num7" class="numunselected"
+                            onclick="getSizes('12-7-12','12','7');ga('send','event','CalcRimTabs','12-15R5','7')">7"</a>
+                    </div>
+                    <div id="DisplayTires1" style="transform: translate3d(0px, 0px, 0px);"><br><br>
+                        <div style="text-align:center"><br><b>No Sizes Available<br>Within 3% of Diameter</b></div>
+                        <br><br>
+                    </div>
+                    <div id="SizeChange">
+                        <select id="changeRim" onchange="changeRim();">
+                            <option value="0">More Wheel Sizes</option>
+                            <option value="14">14"</option>
+                            <option value="15">15"</option>
+                            <option value="16">16"</option>
+                            <option value="17">17"</option>
+                            <option value="18">18"</option>
+                            <option value="19">19"</option>
+                            <option value="20">20"</option>
+                            <option value="21">21"</option>
+                            <option value="22">22"</option>
+                            <option value="23">23"</option>
+                            <option value="24">24"</option>
+                            <option value="26">26"</option>
+                        </select>
+                    </div>
+
+                    <div id="byD"><select class="calcbydiameter"
+                            onchange="location.href=this.options[this.selectedIndex].value;ga('send', 'event', 'DiameterLinks','CalcPages',this.options[this.selectedIndex].text)">
+                            <option value="#">Search Tires By Diameter</option>
+                            <option value="/tiresizes/29-inch-tires/">29 Inch Tires</option>
+                            <option value="/tiresizes/30-inch-tires/">30 Inch Tires</option>
+                            <option value="/tiresizes/31-inch-tires/">31 Inch Tires</option>
+                            <option value="/tiresizes/32-inch-tires/">32 Inch Tires</option>
+                            <option value="/tiresizes/33-inch-tires/">33 Inch Tires</option>
+                            <option value="/tiresizes/34-inch-tires/">34 Inch Tires</option>
+                            <option value="/tiresizes/35-inch-tires/">35 Inch Tires</option>
+                            <option value="/tiresizes/36-inch-tires/">36 Inch Tires</option>
+                            <option value="/tiresizes/37-inch-tires/">37 Inch Tires</option>
+                            <option value="/tiresizes/38-inch-tires/">38 Inch Tires</option>
+                            <option value="/tiresizes/39-inch-tires/">39 Inch Tires</option>
+                            <option value="/tiresizes/40-inch-tires/">40 Inch Tires</option>
+                            <option value="/tiresizes/41-inch-tires/">41 Inch Tires</option>
+                            <option value="/tiresizes/42-inch-tires/">42 Inch Tires</option>
+                            <option value="/tiresizes/43-inch-tires/">43 Inch Tires</option>
+                            <option value="/tiresizes/44-inch-tires/">44 Inch Tires</option>
+                            <option value="/tiresizes/46-inch-tires/">46 Inch Tires</option>
+                            <option value="/tiresizes/47-inch-tires/">47 Inch Tires</option>
+                            <option value="/tiresizes/49-inch-tires/">49 Inch Tires</option>
+                            <option value="/tiresizes/54-inch-tires/">54 Inch Tires</option>
+                        </select></div>
+                </div>
+                <!--close results-->
+            </div>
+            <!--close CalcWrap-->
+
+
+
+            <!-- close content-->
+
+
+            <div id="goTop" onclick="slideMenu('goTop')"></div>
+
+            <!--- close sidebar-->
+        </div>
+        <!--- close wrapwrapper-->
+
+        <script src="https://tiresize.com/js/calc.js"></script>
+
+        <script>
+            function adClickers() {
+                var inputbox, inputs, i;
+                inputbox = g('calctop');
+                inputs = inputbox.getElementsByTagName('input');
+                for (i = 0; i < inputs.length; i++) { inputs[i].setAttribute('onkeydown', 'if(event.keyCode == 13) {calculateF(tirecalc,tirecalc.sw.value,tirecalc.as.value,tirecalc.rim.value,tirecalc.nrim.value,"","TireSizeCalc")}'); }
+            }
+            adClickers();
+
+            var inputbox2 = g('calctop2');
+            var inputs = inputbox2.getElementsByTagName('input');
+            for (i = 0; i < inputs.length; i++) { inputs[i].setAttribute('onkeydown', 'if(event.keyCode == 13) {calculateG(tirecompare,tirecompare.sw.value,tirecompare.as.value,tirecompare.rim.value,tirecompare.swb.value,tirecompare.asb.value,tirecompare.rimb.value,"","TireSizeCalc")}'); }
+
+            var h = getCookie("height");
+            var w = getCookie("width");
+            var r = getCookie("wheel");
+            var preh = getCookie("preheight");
+            var prew = getCookie("prewidth");
+            var prer = getCookie("prewheel");
+            var comph = getCookie("compheight");
+            var compw = getCookie("compwidth");
+            var compr = getCookie("compwheel");
+            var noalert2 = "";
+            if (h == undefined || w == undefined || r == undefined) {
+                if (preh == undefined) { setCookie("noalert", "clicked", 90); noalert2 = "clicked" }
+            } else { calculateF(tirecalc, h, w, r, "", "yes", "TireSizeCalc") }
+            if (preh == undefined || prew == undefined || prer == undefined || comph == undefined || compw == undefined || compr == undefined) {
+                setCookie("Calculator", "Calc", 90);
+                if (h == undefined) { setCookie("noalert", "clicked", 90); noalert2 = "clicked" }
+            } else {
+                calculateG(tirecompare, preh, prew, prer, comph, compw, compr, "yes", "TireSizeCalc");
+                var calc = getCookie("Calculator");
+                if (calc == "Comp") { toptab3() } else { }
+            }
+
+            var Slide;
+            var leftValue;
+            var leftPos;
+            var i = 0;
+
+            function slideTires(dir) {
+                g('slide' + dir).setAttribute("onclick", "");
+                leftValue = g('sugdisplaywrap').scrollLeft;
+                var dots = g('Dots').getElementsByTagName('a');
+                for (var i2 = 0; i2 < dots.length; i2++) { dots[i2].style.backgroundColor = "#fff" }
+                var maxValue = dots.length - 1;
+                if (dir == 'Left') { var dotValue = Math.ceil((leftValue - 900) / 900); if (dotValue < 0) { dotValue = 0 } } else { var dotValue = Math.ceil((leftValue + 900) / 900) }
+                if (dotValue > maxValue) { g(maxValue).style.backgroundColor = "#2083d4" } else { g(dotValue).style.backgroundColor = "#2083d4"; }
+                Slide = setInterval(function () { Move(leftValue, dir) }, 20);
+            }
+
+            function quickSlide(pos) {
+                var spos = pos * 900;
+                g('sugdisplaywrap').scrollLeft = spos;
+                var dots = g('Dots').getElementsByTagName('a');
+                for (var i2 = 0; i2 < dots.length; i2++) { dots[i2].style.backgroundColor = "#fff" }
+                g(pos).style.backgroundColor = "#2083d4";
+            }
+
+            function Move(leftValue, dir) {
+                if (dir == 'Right') { leftPos = leftValue + i } else { leftPos = leftValue - i }
+                i += 45;
+                g('sugdisplaywrap').scrollLeft = leftPos;
+                if (i <= 900) { } else { i = 0; clearInterval(Slide); g('slide' + dir).setAttribute("onclick", "slideTires('" + dir + "')") }
+            }
+
+            window.addEventListener('resize', function () {
+                if (window.matchMedia("(max-width:767px)").matches) {
+                    g('calctab').style.marginTop = "0px";
+                    g('CalcWrap').style.marginTop = "-5px";
+                } else if (g('sugdisplay').innerHTML == '') {
+                    g('calctab').style.marginTop = "28px";
+                    g('CalcWrap').style.marginTop = "25px";
+                    if (getCookie("Calculator") == "Comp") { g('resultstab').style.display = "none" } else { g('resultstab').style.display = "block" }
+                } else {
+                    g('sugdisplay').style.display = "block";
+                    g('calctab').style.marginTop = "175px";
+                    g('CalcWrap').style.marginTop = "172px";
+                    g('CalcViewer').style.display = "block";
+                    g('MenuWrapper').style.cssText = "float:right";
+                    if (getCookie("Calculator") == "Comp") { g('resultstab').style.display = "none" } else { g('resultstab').style.display = "block" }
+                }
+            }, true);
+        </script>
+
+    </div>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+	// ]]>
+    </script>
+
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+	// ]]>
+    </script>
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+	// ]]>
+    </script>
+
+</body>
+
+</html>
